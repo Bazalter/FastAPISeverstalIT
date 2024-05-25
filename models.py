@@ -1,4 +1,4 @@
-from sqlalchemy import String, Float, Integer, DateTime
+from sqlalchemy import Float, Integer, DateTime
 from sqlalchemy.orm import Mapped, mapped_column
 from datetime import datetime
 from database import Base
@@ -11,4 +11,4 @@ class Roll(Base):
     length: Mapped[float] = mapped_column(Float, nullable=False)
     weight: Mapped[float] = mapped_column(Float, nullable=False)
     date_added: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
-    date_removed: Mapped[datetime] = mapped_column(DateTime, nullable=False)
+    date_removed: Mapped[datetime] = mapped_column(DateTime, nullable=True)
